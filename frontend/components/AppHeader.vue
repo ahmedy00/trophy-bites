@@ -2,8 +2,8 @@
 import TrophyBitesLogo from '~/assets/img/TrophyBitesLogo.png'
 </script>
 <template>
-  <header class="bg-green-400">
-    <nav class="container grid grid-cols-7 m-auto items-center h-[64px]">
+  <header class="bg-light-header dark:bg-dark-header custom:bg-custom-header">
+    <nav class="container grid grid-cols-7 m-auto items-center h-header">
       <div>
         <img
           :src="TrophyBitesLogo"
