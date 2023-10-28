@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import TrophyBitesLogo from '~/assets/img/TrophyBitesLogo.png'
 </script>
 <template>
   <header class="bg-light-header dark:bg-dark-header custom:bg-custom-header">
-    <nav class="container grid grid-cols-7 m-auto items-center h-header">
+    <nav class="container px-24 grid grid-cols-7 m-auto items-center h-header">
       <div>
-        <img
-          :src="TrophyBitesLogo"
-          alt="TrophyBitesLogo"
-          width="50"
-        >
+        <AppLogo />
       </div>
       <div class="col-span-6 flex justify-end gap-8 ">
         <div>Tema</div>
