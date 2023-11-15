@@ -8,6 +8,8 @@ module.exports = {
     ],
     rules: {
         'quotes': ['error', 'single'],
+        'semi': ['error', 'never'],
+        'object-curly-spacing': ['error', 'always'],
         'vue/component-tags-order': [
             'error',
             {
