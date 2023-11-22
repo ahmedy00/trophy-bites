@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
 
 </script>
 <template>
@@ -9,12 +8,8 @@ import ThemeSwitcher from '~/components/ThemeSwitcher.vue'
         <AppLogo />
       </div>
       <div class="col-span-6 flex justify-end gap-8 ">
-        <div>
-          <ThemeSwitcher />
-        </div>
-        <div>
-          Dil
-        </div>
+        <ThemeSelector />
+        <LanguageSelector />
         <div class="pl-8">
           Login
         </div>
