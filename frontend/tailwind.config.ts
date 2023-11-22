@@ -8,6 +8,7 @@ export default {
       '~/utils/**/*.{js,ts}',
       '~/nuxt.config.{js,ts}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
         fontFamily: {
@@ -15,14 +16,15 @@ export default {
             display: ['Poppins', 'sans'],
         },
         colors: {
+            primary: '',
+            secondary: '#42B883',
+            gloom: '#170C0C',
+            essence: '#C3C3C3',
             light: {
-                header: '#ebeef5'
+                header: '#FFFFFF',
             },
             dark: {
-                header: '#40423d'
-            },
-            custom: {
-                header: '#1a592f'
+                header: '#1A1A1A',
             }
         },
         height: {

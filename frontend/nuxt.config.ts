@@ -1,11 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: {enabled: true},
+    devtools: { enabled: true },
     modules: [
         '@pinia/nuxt',
         '@nuxtjs/tailwindcss',
-        'nuxt-vitest',
+        '@nuxtjs/color-mode',
+        'nuxt-icon'
     ],
+    colorMode: {
+        classSuffix: '',
+      },
     tailwindcss: {
         cssPath: '~/assets/css/tailwind.css',
         configPath: 'tailwind.config.ts',
