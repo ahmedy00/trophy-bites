@@ -18,6 +18,8 @@ export default {
         colors: {
             primary: '',
             secondary: '#42B883',
+            gloom: '#170C0C',
+            essence: '#C3C3C3',
             light: {
                 header: '#FFFFFF',
             },
