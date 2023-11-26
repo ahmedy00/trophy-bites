@@ -15,7 +15,7 @@ const languages: Language[] = [
 const i18n = useI18n()
 
 const selectLanguage = (language: string) => {
-  i18n.locale.value = language
+  i18n.setLocale(language)
 }
 
 </script>
