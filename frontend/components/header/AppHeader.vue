@@ -34,13 +34,6 @@ const handleLoginError = () => {
           @success="handleLoginSuccess"
           @error="handleLoginError"
         />
-        <div v-if="!!user">
-          <pre>{{ user }}</pre>
-          <img
-            :src="user.data.picture"
-            alt=""
-          >
-        </div>
       </div>
     </nav>
   </header>
