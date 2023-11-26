@@ -14,7 +14,11 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         'nuxt-icon',
         '@nuxtjs/i18n',
+        'nuxt-vue3-google-signin'
     ],
+    runtimeConfig: {
+        clientId: process.env.GOOGLE_CLIENT_ID,
+    },
     colorMode: {
         classSuffix: '',
       },
@@ -42,5 +46,8 @@ export default defineNuxtConfig({
             file: 'tr.json',
           }
       ],
+    },
+    googleSignIn: {
+        clientId: process.env.GOOGLE_CLIENT_ID,
     }
 })

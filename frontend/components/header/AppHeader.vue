@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import type { CredentialResponse } from 'vue3-google-signin'
+
+const user = ref()
+const handleLoginSuccess = async (response: CredentialResponse) => {
+  const { credential } = response
+
+  if (credential) {
+    user.value = await useFetch('/api/google-login', {
+      method: 'POST',
+      body: {
+        token: credential
+      }
+    })
+  }
+  console.log('user', user)
+}
+
+const handleLoginError = () => {
+  console.error('Login failed')
+}
 
 </script>
 <template>
@@ -7,11 +27,19 @@
       <div>
         <AppLogo />
       </div>
-      <div class="col-span-6 flex justify-end gap-8 ">
+      <div class="col-span-6 flex justify-end gap-8">
         <ThemeSelector />
         <LanguageSelector />
-        <div class="pl-8">
-          Login
+        <GoogleSignInButton
+          @success="handleLoginSuccess"
+          @error="handleLoginError"
+        />
+        <div v-if="!!user">
+          <pre>{{ user }}</pre>
+          <img
+            :src="user.data.picture"
+            alt=""
+          >
         </div>
       </div>
     </nav>
