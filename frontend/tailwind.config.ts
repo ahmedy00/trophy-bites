@@ -20,6 +20,7 @@ export default {
             secondary: '#42B883',
             gloom: '#170C0C',
             essence: '#C3C3C3',
+            error: '#EB0C0C',
             light: {
                 header: '#FFFFFF',
             },
