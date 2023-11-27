@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         configPath: 'tailwind.config.ts',
     },
     i18n: {
-        strategy: 'prefix',
+        strategy: 'no_prefix',
         lazy: true,
         langDir: 'locales',
         vueI18n: './i18n.config.ts',

@@ -2,5 +2,13 @@
   "default": {
     "theme": "Tema",
     "language": "Dil"
+  },
+  "auth": {
+    "hello": "Merhaba",
+    "welcome": "Hoş geldin",
+    "register-message": "Kullanıcı bilgilerini gir ve istatistiklerin dünyasını keşfetmeye başla",
+    "login-message": "Nerede kalmıştık?",
+    "register": "Kayıt Ol",
+    "login": "Giriş Yap"
   }
 }

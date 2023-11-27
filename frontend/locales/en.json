@@ -2,5 +2,13 @@
   "default": {
     "theme": "Theme",
     "language": "Language"
+  },
+    "auth": {
+      "hello": "Hello",
+      "welcome": "Welcome Back",
+      "register-message": "Enter your credentials and start the discover the world of stats",
+      "login-message": "'here were we?",
+      "register": "Register",
+      "login": "Login"
   }
 }
