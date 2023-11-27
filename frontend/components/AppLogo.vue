@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import TrophyBitesLogo from '~/assets/img/TrophyBitesLogo.png'
 
+defineProps({
+  width: {
+    type: Number || String,
+    default: null,
+  }
+})
+
 </script>
 
 <template>
@@ -9,7 +16,7 @@ import TrophyBitesLogo from '~/assets/img/TrophyBitesLogo.png'
       class="cursor-pointer"
       :src="TrophyBitesLogo"
       alt="Trophy Bites Logo"
-      width="64"
+      :width="width"
     >
   </NuxtLink>
 </template>
