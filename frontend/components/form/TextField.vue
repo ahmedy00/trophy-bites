@@ -6,7 +6,7 @@ export type IconType = {
   color: string,
 }
 
-defineProps({
+const props = defineProps({
   label: {
     type: String,
     default: '',
@@ -57,6 +57,21 @@ defineEmits(['update:model-value'])
 
 const isFocused = ref(false)
 
+const show = computed(() => {
+  return {
+    prependInner: !!props.prependInnerIcon.name,
+    prependOuter: !!props.prependOuterIcon.name,
+    appendInner: !!props.appendInnerIcon.name,
+    appendOuter: !!props.appendOuterIcon.name,
+    prependInnerAndPrependOuter: !!props.prependInnerIcon.name && !!props.prependOuterIcon.name,
+    prependInnerAndAppendInner: !!props.prependInnerIcon.name && !!props.appendInnerIcon.name,
+    prependInnerAndAppendOuter: !!props.prependInnerIcon.name && !!props.appendInnerIcon.name,
+    prependOuterAndAppendInner: !!props.prependOuterIcon.name && !!props.appendInnerIcon.name,
+    prependOuterAndAppendOuter: !!props.prependOuterIcon.name && !!props.appendOuterIcon.name,
+    appendInnerAndAppendOuter: !!props.appendInnerIcon.name && !!props.appendOuterIcon.name,
+  }
+})
+
 </script>
 
 <template>
@@ -99,16 +114,6 @@ const isFocused = ref(false)
       placeholder=""
       :required="required"
     >
-    <div
-      v-if="showError && isFocused"
-      class="flex items-center justify-center w-48 p-2 bg-error mt-2 ml-2 rounded-md"
-    >
-      <div class="absolute left-4 top-10 border-[10px] border-t-0 border-transparent border-b-error" />
-      <span
-        v-text="$t(errorMessage)"
-        class="text-white"
-      />
-    </div>
     <label
       class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full text-[11px] leading-tight transition-all before:mt-[6px]
       before:mr-1 before:w-2.5 before:rounded-tl-md after:mt-[6px] after:rounded-tr-md after:border-t after:border-t-essence after:flex-grow peer-placeholder-shown:text-sm
