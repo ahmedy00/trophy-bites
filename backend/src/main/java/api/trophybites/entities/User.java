@@ -1,4 +1,4 @@
-package com.trophybites.backend.entities;
+package api.trophybites.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

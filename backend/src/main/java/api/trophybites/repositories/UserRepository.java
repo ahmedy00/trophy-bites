@@ -1,6 +1,6 @@
-package com.trophybites.backend.repositories;
+package api.trophybites.repositories;
 
-import com.trophybites.backend.entities.User;
+import api.trophybites.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

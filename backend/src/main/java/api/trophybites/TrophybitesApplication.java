@@ -1,4 +1,4 @@
-package com.trophybites.backend;
+package api.trophybites;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

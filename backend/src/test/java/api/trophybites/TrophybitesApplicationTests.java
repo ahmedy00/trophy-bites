@@ -1,4 +1,4 @@
-package com.trophybites.backend;
+package api.trophybites;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
