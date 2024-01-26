@@ -3,12 +3,18 @@
     "theme": "Theme",
     "language": "Language"
   },
-    "auth": {
-      "hello": "Hello",
-      "welcome": "Welcome Back",
-      "register-message": "Enter your credentials and start the discover the world of stats",
-      "login-message": "Where were we?",
-      "register": "Register",
-      "login": "Login"
+  "auth": {
+    "hello": "Hello",
+    "welcome": "Welcome Back",
+    "register-message": "Enter your credentials and start the discover the world of stats",
+    "login-message": "Where were we?",
+    "register": "Register",
+    "login": "Login",
+    "login-page": {
+      "user-name": "User Name",
+      "e-mail": "E-mail",
+      "password": "Password",
+      "confirm-password": "Confirm Password"
+    }
   }
 }

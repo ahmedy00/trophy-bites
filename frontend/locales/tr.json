@@ -9,6 +9,12 @@
     "register-message": "Kullanıcı bilgilerini gir ve istatistiklerin dünyasını keşfetmeye başla",
     "login-message": "Nerede kalmıştık?",
     "register": "Kayıt Ol",
-    "login": "Giriş Yap"
+    "login": "Giriş Yap",
+    "login-page": {
+      "user-name": "Kullanıcı Adı",
+      "e-mail": "E-posta",
+      "password": "Şifre",
+      "confirm-password": "Şifre Tekrar"
+    }
   }
 }
