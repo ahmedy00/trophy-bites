@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
-
 export type IconType = {
   name: string,
   color: string,
@@ -28,25 +26,25 @@ const props = defineProps({
     default: '',
   },
   prependInnerIcon: {
-    type: Object as PropType<IconType>,
+    type: Object as () => IconType,
     default: () => {
       return { name: '', color: '' }
     }
   },
   prependOuterIcon: {
-    type: Object as PropType<IconType>,
+    type: Object as () => IconType,
     default: () => {
       return { name: '', color: '' }
     }
   },
   appendInnerIcon: {
-    type: Object as PropType<IconType>,
+    type: Object as () => IconType,
     default: () => {
       return { name: '', color: '' }
     }
   },
   appendOuterIcon: {
-    type: Object as PropType<IconType>,
+    type: Object as () => IconType,
     default: () => {
       return { name: '', color: '' }
     }
