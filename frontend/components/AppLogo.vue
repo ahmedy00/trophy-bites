@@ -5,15 +5,21 @@ defineProps({
   width: {
     type: Number || String,
     default: null,
+  },
+  redirect: {
+    type: String || null,
+    default: '/'
   }
 })
 
 </script>
 
 <template>
-  <NuxtLink to="/">
+  <NuxtLink :to="redirect">
     <img
-      class="cursor-pointer"
+      :class="{
+        'cursor-pointer': !!redirect
+      }"
       :src="TrophyBitesLogo"
       alt="Trophy Bites Logo"
       :width="width"
