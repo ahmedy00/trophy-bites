@@ -13,12 +13,16 @@ defineProps({
   icon: {
     type: Object as () => IconType,
     default: () => {
-      return { name: 'bi:plus', color: '' }
+      return { name: '', color: '' }
     },
   },
   loading: {
     type: Boolean,
     default: false,
+  },
+  capital: {
+    type: Boolean,
+    default: true
   }
 })
 
@@ -59,7 +63,7 @@ defineEmits(['action'])
       </div>
     </template>
     <template v-else>
-      {{ $t(label) }}
+      {{ capital ? $t(label).toUpperCase() : $t(label) }}
       <Icon
         v-if="!!icon.name"
         :name="icon.name"
