@@ -23,9 +23,11 @@ export default {
             error: '#EB0C0C',
             light: {
                 header: '#FFFFFF',
+                text: '#1F1F1F',
             },
             dark: {
                 header: '#1A1A1A',
+                text: '#F3F3F3',
             }
         },
         height: {
