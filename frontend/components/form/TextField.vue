@@ -9,6 +9,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  inputType: {
+    type: String,
+    default: '',
+  },
   required: {
     type: Boolean,
     default: true,
@@ -53,8 +57,6 @@ const props = defineProps({
 
 defineEmits(['update:model-value'])
 
-const isFocused = ref(false)
-
 const show = computed(() => {
   return {
     prependInner: !!props.prependInnerIcon.name,
@@ -97,12 +99,11 @@ const show = computed(() => {
       />
     </span>
     <input
-      @focus="isFocused = true"
-      @blur="isFocused = false"
       @input="$emit('update:model-value', $event.target.value)"
+      :type="inputType"
       :value="modelValue"
-      class="peer h-full w-full rounded-[7px] border border-essence bg-transparent px-3 py-2.5 text-sm text-essence transition-all
-      placeholder-shown:border-essence-200 placeholder-shown:border-t-essence focus:border-1 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-essence"
+      class="peer h-full w-full rounded-[7px] border border-essence bg-transparent px-3 py-2.5 text-sm text-light-text dark:text-dark-text transition-all
+      placeholder-shown:border-essence-200 placeholder-shown:border-t-essence focus:border-1 border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-essence"
       :class="{
         'focus:border-error': showError,
         'pl-14': show.prependInner,
@@ -115,7 +116,7 @@ const show = computed(() => {
     <label
       class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full text-[11px] leading-tight transition-all before:mt-[6px]
       before:mr-1 before:w-2.5 before:rounded-tl-md after:mt-[6px] after:rounded-tr-md after:border-t after:border-t-essence after:flex-grow peer-placeholder-shown:text-sm
-      peer-placeholder-shown:leading-[3.75] peer-focus:text-[11px] peer-focus:leading-tight peer-focus:before:border-t text-black"
+      peer-placeholder-shown:leading-[3.75] peer-focus:text-[11px] before:border-t text-light-text dark:text-dark-text"
       :class="{
         'peer-focus:after:border-error': showError,
         'peer-focus:before:border-error': showError,
