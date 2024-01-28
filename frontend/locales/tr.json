@@ -4,17 +4,22 @@
     "language": "Dil"
   },
   "auth": {
-    "hello": "Merhaba",
-    "welcome": "Hoş geldin",
-    "register-message": "Kullanıcı bilgilerini gir ve istatistiklerin dünyasını keşfetmeye başla",
-    "login-message": "Nerede kalmıştık?",
-    "register": "Kayıt Ol",
-    "login": "Giriş Yap",
-    "login-page": {
+    "common": {
+      "register": "Kayıt Ol",
+      "login": "Giriş Yap",
+      "full-name": "Ad Soyad",
       "user-name": "Kullanıcı Adı",
-      "e-mail": "E-posta",
+      "email": "E-posta",
       "password": "Şifre",
-      "confirm-password": "Şifre Tekrar"
+      "or": "YA DA"
+    },
+    "login-page": {
+      "message": "HESABINIZA GİRİŞ YAPIN",
+      "register-message": "Hesabın yok mu?"
+    },
+    "register-page": {
+      "message": "HESAP OLUŞTURUN",
+      "login-message": "Hesabın var mı?"
     }
   }
 }

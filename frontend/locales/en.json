@@ -4,17 +4,22 @@
     "language": "Language"
   },
   "auth": {
-    "hello": "Hello",
-    "welcome": "Welcome Back",
-    "register-message": "Enter your credentials and start the discover the world of stats",
-    "login-message": "Where were we?",
-    "register": "Register",
-    "login": "Login",
-    "login-page": {
+    "common": {
+      "register": "Register",
+      "login": "Login",
+      "full-name": "Full Name",
       "user-name": "User Name",
-      "e-mail": "E-mail",
+      "email": "E-Mail",
       "password": "Password",
-      "confirm-password": "Confirm Password"
+      "or": "OR"
+    },
+    "login-page": {
+      "message": "LOGIN TO YOUR ACCOUNT",
+      "register-message": "Don't you have an account?"
+    },
+    "register-page": {
+      "message": "CREATE AN ACCOUNT",
+      "login-message": "Do you have an account?"
     }
   }
 }
