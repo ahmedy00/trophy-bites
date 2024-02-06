@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import TextField from '../form/TextField.vue'
+import TextField from './TextField.vue'
 import { mount } from '@vue/test-utils'
 
 describe('Generic Text Field', () => {
