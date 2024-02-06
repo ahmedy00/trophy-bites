@@ -1,8 +1,7 @@
 <script setup lang="ts">
-export type IconType = {
-  name: string,
-  color: string,
-}
+import type { IconType } from '~/types/icon'
+// FIXME: This is unnecessary import for a nuxt project but while testing components gives error without import.
+import { computed } from 'vue'
 
 const props = defineProps({
   label: {
@@ -57,27 +56,26 @@ const props = defineProps({
 
 defineEmits(['update:model-value'])
 
-const show = computed(() => {
-  return {
-    prependInner: !!props.prependInnerIcon.name,
-    prependOuter: !!props.prependOuterIcon.name,
-    appendInner: !!props.appendInnerIcon.name,
-    appendOuter: !!props.appendOuterIcon.name,
-    prependInnerAndPrependOuter: !!props.prependInnerIcon.name && !!props.prependOuterIcon.name,
-    prependInnerAndAppendInner: !!props.prependInnerIcon.name && !!props.appendInnerIcon.name,
-    prependInnerAndAppendOuter: !!props.prependInnerIcon.name && !!props.appendInnerIcon.name,
-    prependOuterAndAppendInner: !!props.prependOuterIcon.name && !!props.appendInnerIcon.name,
-    prependOuterAndAppendOuter: !!props.prependOuterIcon.name && !!props.appendOuterIcon.name,
-    appendInnerAndAppendOuter: !!props.appendInnerIcon.name && !!props.appendOuterIcon.name,
-  }
-})
+const showPrependInner = computed(() => !!props.prependInnerIcon.name)
+const showPrependOuter = computed(() => !!props.prependOuterIcon.name)
+const showAppendInner = computed(() => !!props.appendInnerIcon.name)
+const showAppendOuter = computed(() => !!props.appendOuterIcon.name)
+const showPrependInnerAndPrependOuter = computed(() => !!props.prependInnerIcon.name && !!props.prependOuterIcon.name)
+// const showPrependInnerAndAppendInner = computed(() => !!props.prependInnerIcon.name && !!props.appendInnerIcon.name)
+const showPrependInnerAndAppendOuter = computed(() => !!props.prependInnerIcon.name && !!props.appendInnerIcon.name)
+// const showPrependOuterAndAppendInner = computed(() => !!props.prependOuterIcon.name && !!props.appendInnerIcon.name)
+const showPrependOuterAndAppendOuter = computed(() => !!props.prependOuterIcon.name && !!props.appendInnerIcon.name)
+const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.name && !!props.appendOuterIcon.name)
 
 </script>
 
 <template>
-  <div class="relative h-10 w-full min-w-[200px] mb-4 flex flex-row">
+  <div
+    data-test="generic-text-field"
+    class="relative h-10 w-full min-w-[200px] mb-4 flex flex-row"
+  >
     <span
-      v-if="show.prependOuter"
+      v-if="showPrependOuter"
       class="flex items-center justify-center"
     >
       <Icon
@@ -86,11 +84,11 @@ const show = computed(() => {
       />
     </span>
     <span
-      v-if="show.prependInner"
+      v-if="showPrependInner"
       class="absolute inset-y-0 flex items-center px-2 bg-essence rounded-l-md"
       :class="{
-        'left-8': show.prependInnerAndPrependOuter,
-        'left-0': show.prependInnerAndPrependOuter
+        'left-8': showPrependInnerAndPrependOuter,
+        'left-0': showPrependInnerAndPrependOuter
       }"
     >
       <Icon
@@ -106,9 +104,9 @@ const show = computed(() => {
       placeholder-shown:border-essence-200 placeholder-shown:border-t-essence focus:border-1 border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-essence"
       :class="{
         'focus:border-error': showError,
-        'pl-14': show.prependInner,
-        'ml-2': show.prependInnerAndPrependOuter || show.prependOuter,
-        'mr-2': show.prependInnerAndPrependOuter || show.appendInnerAndAppendOuter
+        'pl-14': showPrependInner,
+        'ml-2': showPrependInnerAndPrependOuter || showPrependOuter,
+        'mr-2': showPrependInnerAndPrependOuter || showAppendInnerAndAppendOuter
       }"
       placeholder=""
       :required="required"
@@ -122,23 +120,23 @@ const show = computed(() => {
         'peer-focus:before:border-error': showError,
         'peer-focus:text-error': showError,
         'peer-focus:text-secondary': !showError,
-        'ml-8 after:mr-8': show.prependOuter,
-        'after:mr-8': show.appendOuter && !show.prependOuter,
-        'after:mr-24 peer-focus:after:mr-16': show.prependOuterAndAppendOuter,
-        'before:pl-12': show.prependInner,
-        'after:mr-16': show.prependOuterAndAppendOuter,
-        'after:mr-10': show.prependInnerAndAppendOuter,
-        'after:mr-[4.5rem]': show.prependInnerAndPrependOuter && show.appendOuter
+        'ml-8 after:mr-8': showPrependOuter,
+        'after:mr-8': showAppendOuter && !showPrependOuter,
+        'after:mr-24 peer-focus:after:mr-16': showPrependOuterAndAppendOuter,
+        'before:pl-12': showPrependInner,
+        'after:mr-16': showPrependOuterAndAppendOuter,
+        'after:mr-10': showPrependInnerAndAppendOuter,
+        'after:mr-[4.5rem]': showPrependInnerAndPrependOuter && showAppendOuter
       }"
     >
-      {{ $t(label) }}
+      {{ label }}
     </label>
     <span
-      v-if="show.appendInner"
+      v-if="showAppendInner"
       class="absolute inset-y-0  flex items-center px-2 bg-essence rounded-r-md"
       :class="{
-        'right-0': show.appendInner && !show.appendOuter,
-        'right-8': show.appendInnerAndAppendOuter
+        'right-0': showAppendInner && !showAppendOuter,
+        'right-8': showAppendInnerAndAppendOuter
       }"
     >
       <Icon
@@ -147,13 +145,13 @@ const show = computed(() => {
       />
     </span>
     <span
-      v-if="show.appendOuter"
+      v-if="showAppendOuter"
       class="flex items-center justify-center"
       :class="{
         'pr-2': !!appendOuterIcon.name && (!!prependOuterIcon.name && !appendOuterIcon.name),
-        'ml-2': show.prependOuterAndAppendOuter,
-        'ml-0': show.prependInnerAndPrependOuter && show.appendOuter,
-        'pl-2': show.appendOuter && !show.prependOuterAndAppendOuter && !show.prependInnerAndAppendOuter
+        'ml-2': showPrependOuterAndAppendOuter,
+        'ml-0': showPrependInnerAndPrependOuter && showAppendOuter,
+        'pl-2': showAppendOuter && !showPrependOuterAndAppendOuter && !showPrependInnerAndAppendOuter
       }"
     >
       <Icon
