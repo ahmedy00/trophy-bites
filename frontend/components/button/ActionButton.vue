@@ -63,7 +63,7 @@ defineEmits(['action'])
       </div>
     </template>
     <template v-else>
-      {{ capital ? $t(label).toUpperCase() : $t(label) }}
+      {{ capital ? label.toUpperCase() : label }}
       <Icon
         v-if="!!icon.name"
         :name="icon.name"

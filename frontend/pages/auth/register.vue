@@ -40,7 +40,7 @@ const handleLoginError = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center p-8 mb-36 h-full w-[100vw] sm:w-[420px]">
+  <div class="flex flex-col items-center p-8 pb-12 sm:pb-36 h-full w-[100vw] sm:w-[420px]">
     <form class="w-full px-2 sm:px-8 py-8 sm:border-[1px] border-essence dark:border-secondary rounded-md">
       <div class="container">
         <div class="flex justify-center">
@@ -59,28 +59,28 @@ const handleLoginError = () => {
             <TextField
               @update:model-value="newValue => fullName = newValue"
               :model-value="fullName"
-              label="auth.common.full-name"
+              :label="$t('auth.common.full-name')"
             />
           </div>
           <div>
             <TextField
               @update:model-value="newValue => email = newValue"
               :model-value="email"
-              label="auth.common.email"
+              :label="$t('auth.common.email')"
             />
           </div>
           <div>
             <TextField
               @update:model-value="newValue => userName = newValue"
               :model-value="userName"
-              label="auth.common.user-name"
+              :label="$t('auth.common.user-name')"
             />
           </div>
           <div>
             <TextField
               @update:model-value="newValue => password = newValue"
               :model-value="password"
-              label="auth.common.password"
+              :label="$t('auth.common.password')"
               :append-inner-icon="{name: 'bi:eye', color: ''}"
               input-type="password"
             />
@@ -88,7 +88,7 @@ const handleLoginError = () => {
           <div class="mt-8">
             <ActionButton
               @action="register"
-              label="auth.common.register"
+              :label="$t('auth.common.register')"
               :loading="registerLoading"
               class="w-full"
             />
