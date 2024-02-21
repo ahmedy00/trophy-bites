@@ -34,7 +34,7 @@ const { capitalizeFirst } = useStringHelpers()
     <MenuButton
       class="px-4 py-1 dark:text-secondary border border-secondary rounded-md"
     >
-      {{ $t(label) }}
+      {{ label }}
       <Icon
         name="mdi:chevron-down"
         color="#42B883"
@@ -70,7 +70,7 @@ const { capitalizeFirst } = useStringHelpers()
               v-if="!!item.icon"
               :name="item.icon"
             />
-            {{ capitalizeFirst(item.name) }}
+            {{ capitalizeFirst(item?.key || item.name) }}
           </button>
         </MenuItem>
       </MenuItems>
