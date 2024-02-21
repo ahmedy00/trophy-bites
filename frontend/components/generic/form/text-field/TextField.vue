@@ -79,6 +79,7 @@ const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.nam
       class="flex items-center justify-center"
     >
       <Icon
+        data-test="prepend-outer-icon"
         :name="prependOuterIcon.name"
         :color="prependOuterIcon.color"
       />
@@ -92,12 +93,14 @@ const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.nam
       }"
     >
       <Icon
+        data-test="prepend-inner-icon"
         :name="prependInnerIcon.name"
         :color="prependInnerIcon.color"
       />
     </span>
     <input
       @input="$emit('update:model-value', $event.target.value)"
+      data-test="text-field-input"
       :type="inputType"
       :value="modelValue"
       class="peer h-full w-full rounded-[7px] border border-essence bg-transparent px-3 py-2.5 text-sm text-light-text dark:text-dark-text transition-all
@@ -112,6 +115,7 @@ const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.nam
       :required="required"
     >
     <label
+      data-test="text-field-label"
       class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full text-[11px] leading-tight transition-all before:mt-[6px]
       before:mr-1 before:w-2.5 before:rounded-tl-md after:mt-[6px] after:rounded-tr-md after:border-t after:border-t-essence after:flex-grow peer-placeholder-shown:text-sm
       peer-placeholder-shown:leading-[3.75] peer-focus:text-[11px] before:border-t text-light-text dark:text-dark-text"
@@ -140,6 +144,7 @@ const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.nam
       }"
     >
       <Icon
+        data-test="append-inner-icon"
         :name="appendInnerIcon.name"
         :color="appendInnerIcon.color"
       />
@@ -155,6 +160,7 @@ const showAppendInnerAndAppendOuter = computed(() => !!props.appendInnerIcon.nam
       }"
     >
       <Icon
+        data-test="append-outer-icon"
         :name="appendOuterIcon.name"
         :color="appendOuterIcon.color"
       />
