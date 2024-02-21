@@ -1,7 +1,10 @@
 {
   "default": {
     "theme": "Tema",
-    "language": "Dil"
+    "language": "Dil",
+    "system": "Sistem",
+    "light": "Açık",
+    "dark": "Koyu"
   },
   "auth": {
     "common": {
